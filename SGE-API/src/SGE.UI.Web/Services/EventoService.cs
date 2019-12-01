@@ -14,7 +14,7 @@ namespace SGE.UI.Web.Services
       var client = new MongoClient(settings.ConnectionString);
       var database = client.GetDatabase(settings.DatabaseName);
 
-      _evento = database.GetCollection<Evento>(settings.SGECollectionName);
+      _evento = database.GetCollection<Evento>(settings.EventosCollectionName);
     }
 
     public List<Evento> Get() =>
