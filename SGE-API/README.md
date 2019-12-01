@@ -49,7 +49,7 @@ O Swagger foi configurado para abrir na raiz do domínio.
 - 0.2.0
   - Adicionado o Swashbuckle na versão 5.0.0-rc2.
 - 0.1.0
-  - Criação do service que que irá adicionar, obter, atualizar e excluir os livros.
+  - Criação do service que que irá adicionar, obter, atualizar e excluir os eventos.
   - Criação da camada de abstração
 - 0.0.1
 
