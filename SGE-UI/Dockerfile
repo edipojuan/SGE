@@ -1,14 +1,19 @@
-FROM node:alpine as builder
+FROM node:10.16.3 as builder
 
-RUN apk update && apk add --no-cache make git
+WORKDIR /app
 
 COPY package*.json /app/
 
-RUN cd /app && npm set progress=false && npm install
+# Add the two entries below
+RUN mkdir -p node_modules/node-sass/vendor/linux-x64-51
+RUN curl -L https://github.com/sass/node-sass/releases/download/v4.5.0/linux-x64-51_binding.node -o node_modules/node-sass/vendor/linux-x64-51/binding.node
+
+RUN npm install
+RUN npm rebuild node-sass
 
 COPY . /app
 
-RUN cd /app && npm run build -- --output-path=./dist/out
+RUN npm run build -- --output-path=./dist
 
 
 FROM nginx:alpine
@@ -17,7 +22,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY --from=builder /app/dist/out /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
