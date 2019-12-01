@@ -1,8 +1,7 @@
 [{
   "Name": "Segurança da Informação",
-  "Date": "2019-12-15 10:00:00.000",
+  "Date": "2019-11-01T16:00:00.147Z",
   "Author": "Édipo Juan",
   "Description": "Nessa palestra falaremos sobre segurança da informação",
-  "createdAt": "2019-12-01T16:00:00.147Z",
-  "__v": 0
+  "CreatedAt": "2019-12-01T16:00:00.147Z"
 }]
