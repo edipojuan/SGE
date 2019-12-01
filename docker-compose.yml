@@ -18,10 +18,7 @@ services:
     build:
       context: ./SGE-API/
     ports:
-      - '5000:5000'
-    volumes:
-      - ./SGE-API/:/usr/app
-      - /usr/app/node_modules
+      - '5000:80'
     links:
       - mongodb
   client:
@@ -34,4 +31,4 @@ services:
     ports:
       - '80:80'
     links:
-      - SGE-API
+      - server
