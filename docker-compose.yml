@@ -1,17 +1,36 @@
 version: '3'
 
 services:
-  mongodb:
-    image: mongo
-    container_name: mongodb
-    restart: always
+  mongo-express:
+    image: mongo-express
     ports:
-      - '27017:27017'
-    command: mongod --shardsvr --port 27017  --oplogSize 16 --noprealloc --smallfiles
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: sgetjmt
+      ME_CONFIG_BASICAUTH_PASSWORD: SGEExpress2019!
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: SGEMongo2019!
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: SGEMongo2019!
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-compose-network
+
   mongo-seed:
     build: ./mongo-seed
     links:
-      - mongodb
+      - mongo
+
   server:
     container_name: SGE-API
     restart: always
@@ -20,7 +39,8 @@ services:
     ports:
       - '5000:80'
     links:
-      - mongodb
+      - mongo
+
   client:
     container_name: SGE-UI
     build:
@@ -32,3 +52,7 @@ services:
       - '80:80'
     links:
       - server
+
+networks: 
+  mongo-compose-network:
+    driver: bridge
