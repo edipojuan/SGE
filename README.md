@@ -12,15 +12,18 @@ Você precisará ter o **Docker** e o **Docker Compose** instalado.
 
 ```
 docker-compose up
-
 ```
 
 ### Containers
 
 mongo
+
 mongo-express
+
 sge_mongo-seed
+
 sge_server
+
 sge_client
 
 ## Built With
@@ -42,17 +45,15 @@ sge_client
 
 - [mongodb](https://www.mongodb.com/)
 
-> Autenticação: Usuário: root Senha: SGEMongo2019!
+> Autenticação: **Usuário:** root **Senha:** SGEMongo2019!
 
 ### Admin Interface
 
 - [mongo-express](https://github.com/mongo-express/mongo-express)
 
-Acesse através do endereço http://localhost:8081/
+Acesse através do endereço http://localhost:8081/ ou clicando [aqui](http://localhost:8081/)
 
-ou clicando [aqui](http://localhost:8081/)
-
-> Autenticação: Usuário: sgetjmt Senha: SGEExpress2019!
+> Autenticação: **Usuário:** sgetjmt **Senha:** SGEExpress2019!
 
 ### Others
 
