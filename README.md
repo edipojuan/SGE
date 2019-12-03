@@ -1,6 +1,16 @@
-# SGE Sistema de Gerenciamento de Eventos (case técnico)
+<h1 align="center">SGE Sistema de Gerenciamento de Eventos (case técnico)</h1>
 
-> O sistema visa gerenciar e notificar os eventos (palestras, cursos etc.) da escola dos servidores.
+<p align="center">
+  
+  [![NPM Version][npm-image]][npm-url]
+  [![Build Status][travis-image]][travis-url]
+  [![Downloads Stats][npm-downloads]][npm-url]
+
+</p>
+
+<p align="center">
+  O sistema visa gerenciar e notificar os eventos (palestras, cursos etc.) da escola dos servidores.
+</p>
 
 ## Getting Started
 
@@ -16,15 +26,11 @@ docker-compose up
 
 ### Containers
 
-mongo
-
-mongo-express
-
-sge_mongo-seed
-
-sge_server
-
-sge_client
+- mongo
+- mongo-express
+- sge_mongo-seed
+- sge_server
+- sge_client
 
 ## Built With
 
@@ -40,6 +46,7 @@ sge_client
 - [.NET Core 2.2](https://dotnet.microsoft.com/)
 - [Autofac](https://autofac.org/)
 - [Swashbuckle](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.0&tabs=visual-studio)
+Acesse através do endereço http://localhost:5000/ ou clicando [aqui](http://localhost:5000/)
 
 ### Database
 
@@ -70,3 +77,10 @@ Acesse através do endereço http://localhost:8081/ ou clicando [aqui](http://lo
 ## License
 
 Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes
+
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/edipojuan/SGE/wiki
