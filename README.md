@@ -12,6 +12,21 @@
   O sistema visa gerenciar e notificar os eventos (palestras, cursos etc.) da escola dos servidores.
 </p>
 
+## Features
+
+ * Acessibilidade
+ * Notificação no app por e-mail e via mensagem no celular
+ * Testes de Unidade e Teste de Integração no backend
+ * 100% de code coverage com testes unitários e E2E no frontend
+ * Desenvolvido utilizando ES6, ES7
+ * Utilização de containers para facilitar o desenvolvimento e a publicação.
+
+ ### developed
+
+ * Acessibilidade
+ * Desenvolvido utilizando ES6, ES7
+ * Utilização de containers para facilitar o desenvolvimento e a publicação.
+
 ## Getting Started
 
 ### Prerequisites
