@@ -12,7 +12,7 @@ namespace SGE.UI.Web.Services
     public EventoService(ISGEDatabaseSettings settings)
     {
       var client = new MongoClient(settings.ConnectionString);
-      var database = client.GetDatabase(settings.DatabaseName);
+      var database = client.GetDatabase(settings.Database);
 
       _evento = database.GetCollection<Evento>(settings.EventosCollectionName);
     }
