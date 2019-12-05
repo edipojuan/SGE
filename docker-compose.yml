@@ -22,7 +22,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: SGEMongo2019!
     ports:
-      - "27017:27017"
+      - '27017:27017'
     networks:
       - mongo-compose-network
 
@@ -30,6 +30,12 @@ services:
     build: ./mongo-seed
     links:
       - mongo
+
+  redis:
+    image: redis
+    command: redis-server --requirepass SGERedis2019!
+    ports:
+      - '6379:6379'
 
   server:
     container_name: SGE-API
@@ -53,6 +59,6 @@ services:
     links:
       - server
 
-networks: 
+networks:
   mongo-compose-network:
     driver: bridge
