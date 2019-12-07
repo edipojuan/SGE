@@ -58,7 +58,7 @@ docker-compose up
 
 ### Server
 
-- [.NET Core 2.2](https://dotnet.microsoft.com/)
+- [.NET Core 2.1](https://dotnet.microsoft.com/)
 - [Autofac](https://autofac.org/)
 - [Swashbuckle](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.0&tabs=visual-studio)
 (Acesse através do endereço http://localhost:5000/ ou clicando [aqui](http://localhost:5000/))

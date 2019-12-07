@@ -6,7 +6,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-Esse sistema foi desenvolvido com o objeto de gerenciar os eventos de occorem na escola dos servidores do TJMT, ou seja, com ele podemos cadastrar, listar, editar e excluir livros. Além de programar notificações que seram enviadas ao app e por e-mail.
+Esse sistema foi desenvolvido com o objeto de gerenciar os eventos de occorem na escola dos servidores do TJMT, ou seja, com ele podemos cadastrar, listar, editar e excluir participantes. Além de programar notificações que seram enviadas ao app e por e-mail.
 
 ![](./SGE-API.png)
 

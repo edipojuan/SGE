@@ -1,93 +1,90 @@
-using System;
-
-using SGE.UI.Web.Models;
-using SGE.UI.Web.Services;
+﻿using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using SGE.Commands;
+using SGE.Infrastructure.CommandPattern.Dispatchers;
+using SGE.Infrastructure.CommandPattern.Handlers;
+using SGE.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
+using SGE.Infra.MongoDB.Data;
+using SGE.Infra.MongoDB.DI;
+using MongoDB.Extensions;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using System;
+using System.Globalization;
+using SGE.UI.Web.Configurations;
+using SGE.UI.Web.Setup;
 
 namespace SGE.UI.Web
 {
   public class Startup
   {
+    public IConfiguration Configuration { get; }
+
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
     }
 
-    public IConfiguration Configuration { get; }
-
-    public void ConfigureServices(IServiceCollection services)
+    public IServiceProvider ConfigureServices(IServiceCollection services)
     {
-      services.AddCors(options =>
-          {
-            options.AddPolicy("AllowSpecificOrigin",
-                    item => item.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials());
-          });
+      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-      services.Configure<SGEDatabaseSettings>(
-          Configuration.GetSection(nameof(SGEDatabaseSettings)));
+      services.AddCors();
+      services.AddOptions();
 
-      services.AddSingleton<ISGEDatabaseSettings>(sp =>
-          sp.GetRequiredService<IOptions<SGEDatabaseSettings>>().Value);
+      services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
+      services.AddScoped<IMongoContext, MongoContext>();
+      services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-      services.AddSingleton<EventoService>();
+      services.MongoDb(Configuration);
 
-      services.AddMvc()
-              .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      Register(services);
 
-      services.AddSwaggerGen(c =>
-      {
-        c.SwaggerDoc("v1", new OpenApiInfo
-        {
-          Version = "v1",
-          Title = "SGE API",
-          Description = "SGE API Swagger",
-          Contact = new OpenApiContact
-          {
-            Name = "Édipo Juan",
-            Email = "edipojs@gmail.com",
-            Url = new Uri("http://www.edipojuan.com.br"),
-          },
-          License = new OpenApiLicense
-          {
-            Name = "Use under MIT",
-            Url = new Uri("https://github.com/edipojuan/SGE/blob/master/LICENSE"),
-          }
-        });
-      });
+      var builder = new ContainerBuilder();
 
+      builder.Populate(services);
+
+      builder.RegisterType<CommandDispatcherSetup>().As<ICommandDispatcher>().InstancePerLifetimeScope();
+      builder.RegisterAssemblyTypes(typeof(Foo).Assembly).AsClosedTypesOf(typeof(ICommandHandler<>)).AsImplementedInterfaces();
+
+      var container = builder.Build();
+
+      return new AutofacServiceProvider(container);
+    }
+
+    private static void Register(IServiceCollection services)
+    {
+      Swagger.Configure(services);
+      MongoModule.Load(services);
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
-      app.UseSwagger();
 
-      app.UseSwaggerUI(c =>
-      {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-        c.RoutePrefix = string.Empty;
-      });
 
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
       }
-      else
-      {
-        app.UseHsts();
-      }
 
-      app.UseCors("AllowSpecificOrigin");
+      var supportedCultures = new[] { new CultureInfo("pt-BR") };
 
+      app.UseMvcWithDefaultRoute();
       app.UseMvc();
+
+      app.UseSwaggerUI(c =>
+      {
+        c.SwaggerEndpoint("swagger/v1/swagger.json", "API");
+        c.RoutePrefix = string.Empty;
+        c.DocExpansion(DocExpansion.None);
+      });
+
+      app.UseSwagger();
     }
   }
 }

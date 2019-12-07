@@ -1,3 +1,4 @@
+﻿using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
@@ -11,8 +12,10 @@ namespace SGE.UI.Web
     }
 
     public static IWebHost BuildWebHost(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
+        WebHost
+            .CreateDefaultBuilder(args)
             .UseStartup<Startup>()
+            .ConfigureServices(s => s.AddAutofac())
             .Build();
   }
 }
