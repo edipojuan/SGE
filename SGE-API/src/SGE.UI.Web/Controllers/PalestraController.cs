@@ -40,10 +40,10 @@ namespace SGE.UI.Web.Controllers
       return Ok(await _finder.GetByAsync(aggregateId));
     }
 
-    [HttpPut("{aggregateId:guid}/editar")]
+    [HttpPut("{aggregateId:guid}")]
     public async Task<IActionResult> EditarAsync(Guid aggregateId, [FromBody]PalestraDto dto)
     {
-      var command = new EditarPalestraCommand(aggregateId, dto.Name);
+      var command = new EditarPalestraCommand(aggregateId, dto.Name, dto.Ativo);
 
       await Dispatcher.DispatchAsync(command);
       await UnitOfWork.CommitAsync();

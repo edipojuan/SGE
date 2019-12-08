@@ -19,7 +19,7 @@ namespace SGE.Commands.PalestraCommands
       var palestra = await _palestraRepository.GetByAsync(command.AggregateId);
       if (palestra == null) throw new Palestra.NaoEncontradaException();
 
-      palestra.Editar(command.Name);
+      palestra.Editar(command.Name, command.Ativo);
 
       await _palestraRepository.UpdateAsync(palestra);
     }

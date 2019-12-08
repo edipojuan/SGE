@@ -17,9 +17,10 @@ namespace SGE.Domain.Aggregates
       Name = new Name(name);
     }
 
-    public void Editar(string name)
+    public void Editar(string name, bool ativo)
     {
       Name = new Name(name);
+      Ativo = ativo;
     }
 
     public class NaoEncontradaException : BusinessException
