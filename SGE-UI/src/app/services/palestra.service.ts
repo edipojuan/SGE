@@ -12,4 +12,11 @@ export class PalestraService extends ServiceBase {
   add = (data: any) => this.post(data);
 
   find = (body: any) => this.get('consulta-simples');
+
+  remove(body: any) {
+    const { aggregateId } = body;
+    body = { ...body, ativo: false };
+
+    return this.put(`${aggregateId}`, body);
+  }
 }

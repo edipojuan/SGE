@@ -68,8 +68,7 @@ export class HomeResultsPage implements OnInit {
       .subscribe(
         (response: any) => {
           this.results = [...this.results, response];
-          console.log('Palestra adicionada..');
-          // Palestra adicionada com sucesso
+          console.log('Palestra adicionada com sucesso.');
         },
         (err: any) => console.log(err)
       );
@@ -81,6 +80,23 @@ export class HomeResultsPage implements OnInit {
       .subscribe(
         (response) => (this.results = response),
         (err) => console.log(err)
+      );
+  }
+
+  remove(data: any) {
+    this.palestraService
+      .remove(data)
+      .subscribe(
+        (response: any) => {
+          const { aggregateId } = data;
+
+          const index = this.results.map(r => r.aggregateId).indexOf(aggregateId);
+          this.results.splice(index, 1);
+          this.results = [...this.results];
+
+          console.log('Palestra removida com sucesso.');
+        },
+        (err: any) => console.log(err)
       );
   }
 

@@ -34,22 +34,34 @@
 
   <ion-list>
 
-    <ion-item button *ngFor="let item of results" (click)="presentItem(item)">
+    <ion-item button *ngFor="let lecture of results">
 
       <ion-avatar slot="start">
-        <img [src]="item.thumbnail" *ngIf="item.thumbnail != 'N/A'">
+        <img [src]="lecture.thumbnail" *ngIf="lecture.thumbnail != 'N/A'">
       </ion-avatar>
 
       <ion-label class="ion-text-wrap">
-        <h3>{{ item.name }}</h3>
-        {{ item.category }}
+        <h3>{{ lecture.name }}</h3>
+        {{ lecture.category }}
         <br>
-        {{  item.ativo  }}
+        {{  lecture.ativo  }}
       </ion-label>
 
-      <ion-icon name="ice-cream" slot="end" *ngIf="item.category == 'Category 1'"></ion-icon>
-      <ion-icon name="beer" slot="end" *ngIf="item.category == 'Category 2'"></ion-icon>
-      <ion-icon name="pizza" slot="end" *ngIf="item.category == 'Category 3'"></ion-icon>
+      <ion-icon name="ice-cream" slot="end" *ngIf="lecture.category == 'Category 1'"></ion-icon>
+      <ion-icon name="beer" slot="end" *ngIf="lecture.category == 'Category 2'"></ion-icon>
+      <ion-icon name="pizza" slot="end" *ngIf="lecture.category == 'Category 3'"></ion-icon>
+
+      <ion-buttons slot="end">
+        <ion-button size="small" shape="round" color="medium" (click)="presentItem(lecture)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-button size="small" shape="round" color="medium" (click)="remove(lecture)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
 
     </ion-item>
 
