@@ -25,20 +25,25 @@ export class AppComponent {
         group: 'Menu',
         itens: [
           {
-            title: 'Home',
-            // url: '/home-results',
+            title: 'Palestras',
             url: '',
             direct: 'root',
-            icon: 'home'
+            icon: 'easel'
           },
           {
-            title: 'About',
-            url: '/about',
-            direct: 'forward',
-            icon: 'information-circle-outline'
+            title: 'Palestrantes',
+            url: '',
+            direct: 'root',
+            icon: 'contacts'
           },
           {
-            title: 'App Settings',
+            title: 'Participantes',
+            url: '',
+            direct: 'root',
+            icon: 'people'
+          },
+          {
+            title: 'Configurações',
             url: '/settings',
             direct: 'forward',
             icon: 'cog'
@@ -50,9 +55,8 @@ export class AppComponent {
         itens: [
           {
             title: 'Sobre',
-            // url: '/home-results',
-            url: '',
-            direct: 'root',
+            url: '/about',
+            direct: 'forward',
             icon: 'information-circle-outline'
           },
           {
@@ -63,12 +67,12 @@ export class AppComponent {
           },
           {
             title: 'Como Funciona',
-            url: '/settings',
+            url: '/about',
             direct: 'forward',
             icon: 'albums'
           },
           {
-            title: 'Mapa',
+            title: 'Local da Palestra',
             url: '/map',
             direct: 'forward',
             icon: 'locate'
@@ -87,7 +91,7 @@ export class AppComponent {
         this.statusBar.styleDefault();
         this.splashScreen.hide();
       })
-      .catch(() => {});
+      .catch(() => { });
   }
 
   goToEditProgile() {

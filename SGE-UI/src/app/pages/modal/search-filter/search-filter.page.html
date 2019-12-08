@@ -15,39 +15,38 @@
 
 	<form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-		<ion-item margin-bottom>
+		<ion-item class="ion-margin-bottom">
 			<ion-label color="primary" stacked>
-				<ion-text color="dark" class="fw500">Nome</ion-text>
+				<ion-text color="dark" class="fw500">Texto</ion-text>
 			</ion-label>
-			<ion-input type="text" placeholder="Ex.: Macarrão" formControlName="title"></ion-input>
+			<ion-input type="text" placeholder="Ex.: Docker | Bill | 15/12/2019" formControlName="title"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label class="fw500" color="dark">Categoria</ion-label>
-			<!-- <ion-select formControlName="category" multiple="true"> -->
 			<ion-select formControlName="category">
 				<ion-select-option *ngFor="let item of categories">{{ item.name }}</ion-select-option>
 			</ion-select>
 		</ion-item>
 
 		<ion-item>
-			<ion-label class="fw500" color="dark">Tag</ion-label>
+			<ion-label class="fw500" color="dark">Palestrantes</ion-label>
 			<ion-select formControlName="tag">
 				<ion-select-option *ngFor="let item of tags">{{ item.name }}</ion-select-option>
 			</ion-select>
 		</ion-item>
 
-		<ion-item margin-bottom>
+		<ion-item class="ion-margin-bottom">
 			<ion-label class="no-margin-bottom">
 				<ion-text color="dark" class="fw500">Preço</ion-text>
 			</ion-label>
 
 			<ion-range dualKnobs="true" formControlName="price" min="1" max="1000" step="10" class="no-padding-top">
 				<ion-label slot="start">
-					<ion-text color="primary">$ {{ form.get('price').value.lower }}</ion-text>
+					<ion-text color="primary">R$ {{ form.get('price').value.lower }}</ion-text>
 				</ion-label>
 				<ion-label slot="end">
-					<ion-text color="primary">$ {{ form.get('price').value.upper }}</ion-text>
+					<ion-text color="primary">R$ {{ form.get('price').value.upper }}</ion-text>
 				</ion-label>
 			</ion-range>
 		</ion-item>

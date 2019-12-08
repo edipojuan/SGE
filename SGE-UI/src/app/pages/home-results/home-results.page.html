@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>
       <ion-text color="light">
-        <ion-text color="light" class="fw700">Próximos Eventos</ion-text>
+        <ion-text color="light" class="fw700">Próximas Palestras</ion-text>
       </ion-text>
     </ion-title>
     <ion-buttons slot="end">
@@ -16,7 +16,6 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar color="dark">
-    <!-- (ionInput)="find()" [(ngModel)]="searchKey" -->
     <ion-searchbar (ionInput)="onSearchChange($event.target.value)"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
@@ -27,33 +26,16 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-card no-margin class="no-radius">
-    <ion-item lines="none" color="medium">
-      <ion-label>
-        <h2 no-margin class="fw500 no-margin">
-          <ion-text color="dark">Alert / Toast test</ion-text>
-        </h2>
-
-        <p class="text-11x no-margin">
-          <ion-text color="primary">{{yourLocation}}</ion-text>
-        </p>
-      </ion-label>
-      <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
-        Location
-        <ion-icon name="locate"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-card> -->
 
   <ion-list>
 
-    <!-- <ion-item button *ngFor="let item of (results | async)" (click)="presentItem(item)"> -->
     <ion-item button *ngFor="let item of results" (click)="presentItem(item)">
+
       <ion-avatar slot="start">
         <img [src]="item.thumbnail" *ngIf="item.thumbnail != 'N/A'">
       </ion-avatar>
 
-      <ion-label text-wrap>
+      <ion-label class="ion-text-wrap">
         <h3>{{ item.title }}</h3>
         {{ item.category }}
         <br>
@@ -67,28 +49,6 @@
     </ion-item>
 
   </ion-list>
-
-  <!-- <ion-card *ngFor="let item of itens" (click)="presentItem(item)">
-    <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>{{item.title}}</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      {{item.description}}
-    </ion-card-content>
-  </ion-card> -->
-
-  <!-- <ion-card class="bg-white">
-    <ion-img [src]="themeCover"></ion-img>
-    <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
-      Modal 1: Modal Image
-    </ion-button>
-  </ion-card> -->
-
-  <!-- <ion-button margin shape="round" expand="full" color="secondary" (click)="searchFilter()">
-    Modal 2: Search Filter
-  </ion-button> -->
 
   <popmenu></popmenu>
 </ion-content>

@@ -1,13 +1,13 @@
 [{
     "id": 1,
-    "name": "Promoção 1"
+    "name": "Bill Gates"
   },
   {
     "id": 2,
-    "name": "Novo 2"
+    "name": "Steve Jobs"
   },
   {
-    "id": 2,
-    "name": "Mais Vendido 3"
+    "id": 3,
+    "name": "Mark Zuckerberg"
   }
 ]

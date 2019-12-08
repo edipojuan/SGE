@@ -1,16 +1,21 @@
 [{
     "id": 1,
-    "name": "Category 1",
-    "picture": "description item 1 preço 10"
+    "name": "Front-end e Back-end",
+    "picture": "description Front-end e Back-end"
   },
   {
     "id": 2,
-    "name": "Category 2",
-    "picture": "description item 2 preço 20"
+    "name": "Análise de sistemas",
+    "picture": "description Análise de sistemas"
   },
   {
     "id": 3,
-    "name": "Category 3",
-    "picture": "description item 3 preço 30"
+    "name": "Qualidade de software",
+    "picture": "description Qualidade de software"
+  },
+  {
+    "id": 3,
+    "name": "Metodologia ágil",
+    "picture": "description Metodologia ágil"
   }
 ]

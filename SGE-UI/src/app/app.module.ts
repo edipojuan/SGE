@@ -42,4 +42,4 @@ import { NotificationsComponent } from './components/notifications/notifications
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
