@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  sge_api: 'http://localhost:5000'
+  sge_api: 'http://localhost:5000/v1'
 };
