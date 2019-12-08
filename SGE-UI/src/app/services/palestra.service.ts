@@ -9,5 +9,7 @@ export class PalestraService extends ServiceBase {
     super(injector, 'palestra');
   }
 
+  add = (data: any) => this.post(data);
+
   find = (body: any) => this.get('consulta-simples');
 }

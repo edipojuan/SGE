@@ -62,6 +62,19 @@ export class HomeResultsPage implements OnInit {
     this.timeout = setTimeout(() => this.find({ title: searchKey }), 400);
   }
 
+  add(data: any) {
+    this.palestraService
+      .add(data)
+      .subscribe(
+        (response: any) => {
+          this.results = [...this.results, response];
+          console.log('Palestra adicionada..');
+          // Palestra adicionada com sucesso
+        },
+        (err: any) => console.log(err)
+      );
+  }
+
   find(searchFilter: any = {}) {
     this.palestraService
       .find(searchFilter)
@@ -117,6 +130,16 @@ export class HomeResultsPage implements OnInit {
   async addLecture() {
     const modal = await this.modalCtrl.create({
       component: AddLecturePage
+    });
+
+    modal.onDidDismiss().then((result) => {
+      const { data } = result;
+
+      if (!data) {
+        return;
+      }
+
+      this.add(data);
     });
 
     return await modal.present();

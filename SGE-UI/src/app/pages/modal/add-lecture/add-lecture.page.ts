@@ -1,17 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
 import { ModalController } from '@ionic/angular';
+import { BaseForm } from 'src/app/shared/base/base-form';
 
 @Component({
   selector: 'app-add-lecture',
   templateUrl: './add-lecture.page.html',
   styleUrls: ['./add-lecture.page.scss']
 })
-export class AddLecturePage implements OnInit {
+export class AddLecturePage extends BaseForm {
+  constructor(private modalCtrl: ModalController, injector: Injector) {
+    super(injector);
+  }
 
-  constructor(private modalCtrl: ModalController) { }
+  onInit() {
+    this.form = this.formBuilder.group({
+      name: [null]
+    })
+  }
 
-  ngOnInit() {
+  submit(): void {
+    this.modalCtrl.dismiss(this.form.value);
   }
 
   closeModal() {

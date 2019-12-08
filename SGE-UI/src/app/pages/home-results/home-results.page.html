@@ -41,10 +41,10 @@
       </ion-avatar>
 
       <ion-label class="ion-text-wrap">
-        <h3>{{ item.title }}</h3>
+        <h3>{{ item.name }}</h3>
         {{ item.category }}
         <br>
-        {{ item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }}
+        {{  item.ativo  }}
       </ion-label>
 
       <ion-icon name="ice-cream" slot="end" *ngIf="item.category == 'Category 1'"></ion-icon>

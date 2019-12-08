@@ -10,3 +10,19 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <ion-item class="ion-margin-bottom">
+      <ion-label color="primary" stacked>
+        <ion-text color="dark" class="fw500">Título</ion-text>
+      </ion-label>
+      <ion-input type="text" placeholder="Ex.: Docker & Kubernetes" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="full" color="success">Salvar</ion-button>
+
+  </form>
+</ion-content>
