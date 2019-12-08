@@ -90,6 +90,23 @@ Acesse através do endereço http://localhost:8081/ ou clicando [aqui](http://lo
 - [Docker](https://www.docker.com/)
 - [NGINX](https://www.nginx.com/)
 
+## Projects reference
+
+## My
+
+- [telephone-book](https://github.com/edipojuan/telephone-book)
+- [easy-search](https://github.com/edipojuan/easy-search)
+- [rastreador-correios](https://github.com/edipojuan/rastreador-correios)
+- [book-store-app](https://github.com/edipojuan/book-store-app)
+- [pwa-test](https://github.com/edipojuan/pwa-test)
+
+## Others
+
+- [cep-promise](https://github.com/filipedeschamps/cep-promise)
+- [EquinoxProject](https://github.com/EduardoPires/EquinoxProject)
+- [enjoy.cqrs](https://github.com/ircnelson/enjoy.cqrs)
+- [SGP-WEB](sgpweb.tjmt.jus.br)
+- [curso-angular](https://github.com/loiane/curso-angular)
 
 ## Autor
 
