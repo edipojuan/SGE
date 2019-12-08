@@ -17,6 +17,8 @@ import { ItemDetailsPage } from './../modal/item-details/item-details.page';
 import { NotificationsComponent } from './../../components/notifications/notifications.component';
 
 import { MenuService } from './../../services/menu.service';
+import { PalestraService } from './../../services/palestra.service';
+import { AddLecturePage } from '../modal/add-lecture/add-lecture.page';
 
 @Component({
   selector: 'app-home-results',
@@ -27,8 +29,8 @@ export class HomeResultsPage implements OnInit {
   yourLocation = '123 Test Street';
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
 
-  results = [];
-  timeout;
+  results: any;
+  timeout: any;
 
   categories = [];
   tags = [];
@@ -40,8 +42,9 @@ export class HomeResultsPage implements OnInit {
     public alertCtrl: AlertController,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
-    public menuService: MenuService
-  ) {}
+    public menuService: MenuService,
+    public palestraService: PalestraService
+  ) { }
 
   ngOnInit(): void {
     this.find();
@@ -60,7 +63,7 @@ export class HomeResultsPage implements OnInit {
   }
 
   find(searchFilter: any = {}) {
-    this.menuService
+    this.palestraService
       .find(searchFilter)
       .subscribe(
         (response) => (this.results = response),
@@ -109,6 +112,14 @@ export class HomeResultsPage implements OnInit {
       ]
     });
     changeLocation.present();
+  }
+
+  async addLecture() {
+    const modal = await this.modalCtrl.create({
+      component: AddLecturePage
+    });
+
+    return await modal.present();
   }
 
   async searchFilter() {

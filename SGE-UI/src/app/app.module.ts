@@ -16,6 +16,7 @@ import { InterceptorModule } from './shared/interceptors/interceptor.module';
 // Modal Pages
 import { ImagePageModule } from './pages/modal/image/image.module';
 import { SearchFilterPageModule } from './pages/modal/search-filter/search-filter.module';
+import { AddLecturePageModule } from './pages/modal/add-lecture/add-lecture.module';
 import { ItemDetailsPageModule } from './pages/modal/item-details/item-details.module';
 
 // Components
@@ -31,6 +32,7 @@ import { NotificationsComponent } from './components/notifications/notifications
     HttpClientModule,
     ImagePageModule,
     SearchFilterPageModule,
+    AddLecturePageModule,
     ItemDetailsPageModule,
     InterceptorModule
   ],
