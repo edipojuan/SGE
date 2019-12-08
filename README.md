@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="https://sge.tjmt.jus.br/" target="blank">
+    <img src="./SGE_logo.png" alt="Logo" />
+  </a>
+  <br>
+</p>
+
 <h1 align="center">SGE Sistema de Gerenciamento de Eventos (case técnico)</h1>
 
 <p align="center">
