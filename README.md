@@ -92,7 +92,7 @@ Acesse através do endereço http://localhost:8081/ ou clicando [aqui](http://lo
 
 ## Projects reference
 
-## My
+### My
 
 - [telephone-book](https://github.com/edipojuan/telephone-book)
 - [easy-search](https://github.com/edipojuan/easy-search)
@@ -100,7 +100,7 @@ Acesse através do endereço http://localhost:8081/ ou clicando [aqui](http://lo
 - [book-store-app](https://github.com/edipojuan/book-store-app)
 - [pwa-test](https://github.com/edipojuan/pwa-test)
 
-## Others
+### Others
 
 - [cep-promise](https://github.com/filipedeschamps/cep-promise)
 - [EquinoxProject](https://github.com/EduardoPires/EquinoxProject)
