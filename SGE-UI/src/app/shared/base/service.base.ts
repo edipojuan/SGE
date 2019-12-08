@@ -31,7 +31,7 @@ export abstract class ServiceBase {
     return this.httpClient.get(this.getUrl(url), params);
   }
 
-  post(url: string, body: any) {
+  post(body: any, url = '') {
     body = JSON.stringify(body);
 
     return this.httpClient.post<any>(this.getUrl(url), body, httpOptions);
