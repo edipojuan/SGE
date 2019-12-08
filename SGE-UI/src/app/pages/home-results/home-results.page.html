@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>
       <ion-text color="light">
-        <ion-text color="light" class="fw700">Próximas Palestras</ion-text>
+        <ion-text color="light" class="fw700">Palestras</ion-text>
       </ion-text>
     </ion-title>
     <ion-buttons slot="end">
@@ -16,7 +16,12 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar color="dark">
-    <ion-searchbar (ionInput)="onSearchChange($event.target.value)"></ion-searchbar>
+    <ion-buttons slot="start">
+      <ion-button size="small" shape="round" color="medium" (click)="addLecture()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar (ionInput)="onSearchChange($event.target.value)" placeholder="Pesquisar"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
         <ion-icon name="options"></ion-icon>
