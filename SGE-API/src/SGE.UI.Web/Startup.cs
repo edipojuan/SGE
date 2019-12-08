@@ -65,7 +65,12 @@ namespace SGE.UI.Web
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
-
+      app.UseCors(builder =>
+      {
+        builder.AllowAnyHeader();
+        builder.AllowAnyOrigin();
+        builder.AllowAnyMethod();
+      });
 
       if (env.IsDevelopment())
       {
