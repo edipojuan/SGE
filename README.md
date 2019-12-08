@@ -46,6 +46,7 @@ docker-compose up
 - sge_mongo-seed
 - sge_server
 - sge_client
+- redis
 
 ## Built With
 
