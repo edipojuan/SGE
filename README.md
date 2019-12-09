@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  O sistema visa gerenciar e notificar os eventos (palestras, cursos etc.) da escola dos servidores.
+  O sistema visa gerenciar e notificar eventos (palestras, cursos etc.) da escola dos servidores.
 </p>
 
 ## Features
@@ -27,14 +27,14 @@
  * 100% de code coverage com testes unitários e E2E no frontend
  * Desenvolvido utilizando ES6, ES7
  * Utilização de containers para facilitar o desenvolvimento e a publicação.
- * Todos os arquivos passando pelo `ng lint`, ou seja, sem nenhuma erro encontrado pelo lint
+ * Todos os arquivos passando pelo `ng lint`, ou seja, sem nenhum erro encontrado pelo lint
 
  ### developed
 
  * Acessibilidade
  * Desenvolvido utilizando ES6, ES7
  * Utilização de containers para facilitar o desenvolvimento e a publicação.
- * Todos os arquivos passando pelo `ng lint`, ou seja, sem nenhuma erro encontrado pelo lint
+ * Todos os arquivos passando pelo `ng lint`, ou seja, sem nenhum erro encontrado pelo lint
 
 ## Getting Started
 
