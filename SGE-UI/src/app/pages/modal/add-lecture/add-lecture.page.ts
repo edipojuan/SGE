@@ -16,7 +16,7 @@ export class AddLecturePage extends BaseForm {
   onInit() {
     this.form = this.formBuilder.group({
       name: [null]
-    })
+    });
   }
 
   submit(): void {
