@@ -46,6 +46,12 @@ Você precisará ter o **Docker** e o **Docker Compose** instalado.
 docker-compose up
 ```
 
+### Note
+
+Caso não aconteça comunicação do server com o banco de dados (MongoDB)
+1. stop o container sge_server
+2. start o projeto SGE-API `dotnet run`
+
 ### Containers
 
 - mongo
