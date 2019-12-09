@@ -5,7 +5,7 @@
   <br>
 </p>
 
-<h1 align="center">SGE Sistema de Gerenciamento de Eventos (case técnico)</h1>
+<h1 align="center">SGE - Sistema de Gerenciamento de Eventos (case técnico)</h1>
 
 <p align="center">
   
