@@ -75,6 +75,8 @@ docker-compose up
 
 - [mongodb](https://www.mongodb.com/)
 
+Sugestão de ferramenta para acesso ao mongodb: [MongoDB Compass](https://www.mongodb.com/products/compass)
+
 > Autenticação: **Usuário:** root **Senha:** SGEMongo2019!
 
 ### Admin Interface
