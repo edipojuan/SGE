@@ -4,7 +4,7 @@ import { ServiceBase } from '../shared/base/service.base';
 @Injectable({
   providedIn: 'root'
 })
-export class PalestraService extends ServiceBase {
+export class LectureService extends ServiceBase {
   constructor(injector: Injector) {
     super(injector, 'palestra');
   }

@@ -18,6 +18,7 @@ import { ImagePageModule } from './pages/modal/image/image.module';
 import { SearchFilterPageModule } from './pages/modal/search-filter/search-filter.module';
 import { AddLecturePageModule } from './pages/modal/add-lecture/add-lecture.module';
 import { ItemDetailsPageModule } from './pages/modal/item-details/item-details.module';
+import { RootStoreModule } from './shared/store/root-store.module';
 
 // Components
 import { NotificationsComponent } from './components/notifications/notifications.component';
@@ -34,7 +35,8 @@ import { NotificationsComponent } from './components/notifications/notifications
     SearchFilterPageModule,
     AddLecturePageModule,
     ItemDetailsPageModule,
-    InterceptorModule
+    InterceptorModule,
+    RootStoreModule
   ],
   entryComponents: [NotificationsComponent],
   providers: [

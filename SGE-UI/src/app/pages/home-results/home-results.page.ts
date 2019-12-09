@@ -17,7 +17,7 @@ import { ItemDetailsPage } from './../modal/item-details/item-details.page';
 import { NotificationsComponent } from './../../components/notifications/notifications.component';
 
 import { MenuService } from './../../services/menu.service';
-import { PalestraService } from './../../services/palestra.service';
+import { LectureService } from '../../services/lecture.service';
 import { AddLecturePage } from '../modal/add-lecture/add-lecture.page';
 
 @Component({
@@ -43,7 +43,7 @@ export class HomeResultsPage implements OnInit {
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     public menuService: MenuService,
-    public palestraService: PalestraService
+    public lectureService: LectureService
   ) { }
 
   ngOnInit(): void {
@@ -63,7 +63,7 @@ export class HomeResultsPage implements OnInit {
   }
 
   add(data: any) {
-    this.palestraService
+    this.lectureService
       .add(data)
       .subscribe(
         (response: any) => {
@@ -75,7 +75,7 @@ export class HomeResultsPage implements OnInit {
   }
 
   find(searchFilter: any = {}) {
-    this.palestraService
+    this.lectureService
       .find(searchFilter)
       .subscribe(
         (response) => (this.results = response),
@@ -84,7 +84,7 @@ export class HomeResultsPage implements OnInit {
   }
 
   remove(data: any) {
-    this.palestraService
+    this.lectureService
       .remove(data)
       .subscribe(
         (response: any) => {
