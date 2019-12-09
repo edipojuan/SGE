@@ -27,12 +27,14 @@
  * 100% de code coverage com testes unitários e E2E no frontend
  * Desenvolvido utilizando ES6, ES7
  * Utilização de containers para facilitar o desenvolvimento e a publicação.
+ * Todos os arquivos passando pelo `ng lint`, ou seja, sem nenhuma erro encontrado pelo lint
 
  ### developed
 
  * Acessibilidade
  * Desenvolvido utilizando ES6, ES7
  * Utilização de containers para facilitar o desenvolvimento e a publicação.
+ * Todos os arquivos passando pelo `ng lint`, ou seja, sem nenhuma erro encontrado pelo lint
 
 ## Getting Started
 
@@ -74,6 +76,7 @@ Caso não aconteça a comunicação do server com o banco de dados (MongoDB)
 
 - [.NET Core 2.1](https://dotnet.microsoft.com/)
 - [Autofac](https://autofac.org/)
+- [Redis](https://redis.io/)
 - [Swashbuckle](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.0&tabs=visual-studio)
 (Acesse através do endereço http://localhost:5000/ ou clicando [aqui](http://localhost:5000/))
 
