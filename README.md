@@ -40,7 +40,7 @@
 
 ### Prerequisites
 
-Você precisará ter o **Docker** e o **Docker Compose** instalado.
+Você precisará ter o [Docker](https://docs.docker.com/install/) e o [Docker Compose](https://docs.docker.com/compose/install/) instalado.
 
 ### Installing
 
