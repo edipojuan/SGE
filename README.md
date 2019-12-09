@@ -56,12 +56,13 @@ Caso não aconteça a comunicação do server com o banco de dados (MongoDB)
 
 ### Containers
 
-- mongo
-- mongo-express
-- sge_mongo-seed
-- sge_server
-- sge_client
-- redis
+1. mongo
+2. mongo-express
+3. sge_mongo-seed
+4. sge_server
+5. sge_client
+6. redis
+7. rabbitmq:3-management
 
 ## Built With
 
@@ -95,6 +96,12 @@ Sugestão de ferramenta para acesso ao mongodb: [MongoDB Compass](https://www.mo
 Acesse através do endereço http://localhost:8081/ ou clicando [aqui](http://localhost:8081/)
 
 > Autenticação: **Usuário:** sgetjmt **Senha:** SGEExpress2019!
+
+### Rabbitmq Management
+
+Acesse através do endereço http://localhost:15672/ ou clicando [aqui](http://localhost:15672/)
+
+> Autenticação: **Usuário:** rabbitmq **Senha:** rabbitmq
 
 ### Others
 
